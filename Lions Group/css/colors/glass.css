@@ -1,0 +1,102 @@
+html::before,
+html::after{
+    content: '';
+    position: fixed;
+    z-index: -2;
+    border-radius: 50%;
+    background-image: linear-gradient(  to right , rgba(27, 209, 106, 0.526), rgba(164, 160, 136, 0.429)
+     , rgba(201, 95, 20, 0.172));
+}
+html::before{
+    content: "";
+    height: 100px;
+    width: 100px;
+    top: 20%;
+    left: calc(50% - 650px) ;
+    background-image: linear-gradient(  to right , rgb(27, 209, 106,0.4), rgba(255, 217, 0, 0.429)
+    , rgba(0, 0, 0, 0.172));
+}
+html::after{
+    height: 150px;
+    width: 150px; 
+    bottom: 20%;
+    right: calc(50% - 675px) ;
+    background-image: linear-gradient(  to right , rgba(27, 209, 106, 0.526), rgba(164, 160, 136, 0.429)
+     , rgba(201, 95, 20, 0.172));
+}
+
+
+
+
+body{
+    --white: hsla(0,0%,100%,0.25);
+    --border-color-2: hsla(0 ,0%, 100%, 0.40);
+    ---shadow:none;
+   --border-color-2: hsla(0 ,0%, 0%, 0.1);
+   --background-image:linear-gradient( to right , var(--body-gradient-bg-color-1),
+    var(--body-gradient-bg-color-2));
+    background-attachment: fixed;
+    background-image: linear-gradient(  to right , rgba(81, 95, 160, 0.526), rgba(164, 136, 144, 0.429), rgba(195, 20, 201, 0.172));
+    padding: 40px 0;
+    --backdrop-flter-blur: blur(5px) ;
+}
+body::before{
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--WHITE);
+    opacity: 0.3;
+    z-index: -3;
+}
+.main-wrapper{
+    max-width: 1200px;
+    background: var(--white);
+    border: 1px solid var(--border-color-2) ;
+    margin: auto;
+    border-radius: 20px;
+    position: relative;
+    
+}
+.main-wrapper::before{
+    content: '' ;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0; 
+    position: absolute;
+    -webkit-backdrop-filter: var(--backdrop-flter-blur);   
+    backdrop-filter: var(--backdrop-flter-blur);
+    z-index: -1;
+    border-radius: 20px;  
+}
+.modal,
+.header,
+.style-switcher{
+    -webkit-backdrop-filter: var(--backdrop-flter-blur);   
+    backdrop-filter: var(--backdrop-flter-blur);
+}
+.modal-backdrop{
+    background-color: var(--white);
+}
+body.t-dark{
+    --border-color-2:hsla(0 , 0% ,100% , 0.07 );
+    --border-color-1:hsla(0 , 0% ,100% , 0.15 );
+    --white:hsla(0 , 0% ,100% , 0.05 );
+    --shadow:none;
+    
+}
+body.t-dark::before{
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--BLACK);
+    opacity: 0.2;
+    z-index: -1;
+    
+}
